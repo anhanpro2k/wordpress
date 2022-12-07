@@ -35,7 +35,7 @@ if ( post_password_required() ) {
 				'short_ping'        => false,
 				'echo'              => true
 			);
-			 wp_list_comments( $args );
+			wp_list_comments( $args );
 			?>
         </ol>
 		<?php

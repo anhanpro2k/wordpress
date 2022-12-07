@@ -1,0 +1,35 @@
+.swiper-pagination {
+  --swiper-pagination-bullet-width: 1.6rem;
+  --swiper-pagination-bullet-height: 1.6rem;
+  --swiper-pagination-color: rgba(25, 25, 25, 0.3);
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-horizontal-gap: 0.6rem;
+  &-bullet {
+    --swiper-pagination-color: #c94a4f;
+    @include transition(all $t);
+  }
+}
+
+.slider-ctr {
+  @include center(flex);
+  margin-top: 8rem;
+  column-gap: 2.4rem;
+  .swiper-pagination {
+    position: static;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+  }
+  .arrow {
+    @include size(4.4rem);
+    @include center(flex);
+    cursor: pointer;
+    > * {
+      display: block;
+    }
+  }
+
+  @include sm {
+    margin-top: 2.4rem;
+  }
+}

@@ -1,0 +1,73 @@
+@mixin make-col-ready() {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: calc(var(--gutter-x) * 0.5);
+  padding-left: calc(var(--gutter-x) * 0.5);
+  margin-top: var(--gutter-y);
+}
+@mixin make-col($size: false, $columns: $grid-columns) {
+  @if $size {
+    flex: 0 0 auto;
+    width: ($size * 100%) / $columns;
+  } @else {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
+@mixin make-col-offset($size: false, $columns: $grid-columns) {
+  margin-left: ($size * 100%) / $columns;
+}
+@mixin make-grid-columns(
+  $columns: $grid-columns,
+  $gutter: $grid-gutter-width,
+  $breakpoints: $grid-breakpoints
+) {
+  @each $breakpoint in map-keys($breakpoints) {
+    $infix: breakpoint-infix($breakpoint, $breakpoints);
+
+    @include media-breakpoint-up($breakpoint, $breakpoints) {
+      // Provide basic `.col-{bp}` classes for equal-width flexbox columns
+      // .col#{$infix} {
+      //   flex: 1 0 0%;
+      // }
+
+      // .row-cols-auto > * {
+      //   @include make-col-auto();
+      // }
+
+      // @if $grid-row-columns > 0 {
+      //   @for $i from 1 through $grid-row-columns {
+      //     .row-cols-#{$i} {
+      //       @include row-cols($i);
+      //     }
+      //   }
+      // }
+
+      // .col-auto {
+      //   @include make-col-auto();
+      // }
+
+      @if $columns > 0 {
+        @for $i from 1 through $columns {
+          .col-#{$i}#{$infix} {
+            @include make-col($i, $columns);
+          }
+        }
+
+        // `$columns - 1` because offsetting by the width of an entire row isn't possible
+        @for $i from 0 through ($columns - 1) {
+          @if not($infix == "" and $i == 0) {
+            // Avoid emitting useless .offset-0
+            .offset-#{$i}#{$infix} {
+              @include make-col-offset($i, $columns);
+            }
+          }
+        }
+      }
+
+      //
+    }
+  }
+}

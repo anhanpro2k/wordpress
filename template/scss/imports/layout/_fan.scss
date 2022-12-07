@@ -1,0 +1,74 @@
+.fan {
+  &-heading {
+    &__content {
+      .sub-title {
+        text-transform: none;
+      }
+    }
+    &__image {
+      padding-left: 4rem;
+      column-gap: 2.4rem;
+      .logo img {
+        display: block;
+      }
+    }
+  }
+  &-test {
+    > .row {
+      --gutter-x: 4rem;
+    }
+    &__comment {
+      .comment {
+        + .comment {
+          margin-top: 2.4rem;
+        }
+        &-content {
+          padding: 1.4rem 2rem;
+          .text {
+            @include overtext(3);
+          }
+        }
+        &-bot {
+          margin-top: 2.8rem;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+        &-auth {
+          display: flex;
+          align-items: center;
+          column-gap: 1rem;
+        }
+        &-pos {
+          color: $subtitle;
+        }
+        &-avt {
+          img {
+            @include circle(3.6rem);
+            display: block;
+          }
+        }
+      }
+    }
+    &__video {
+      position: relative;
+      .video-thumb {
+        @include image-responsive(660, 508);
+        overflow: hidden;
+        background: linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.4),
+          rgba(0, 0, 0, 0.4)
+        );
+        border: 0.275rem solid #cccccc;
+        border-radius: $base-radius;
+        img {
+          z-index: -1;
+        }
+      }
+      .button-play {
+        @include center(xy);
+        color: $white-cl;
+      }
+    }
+  }
+}

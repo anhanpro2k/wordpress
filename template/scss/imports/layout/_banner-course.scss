@@ -1,0 +1,82 @@
+.banner-course {
+  &-wrap {
+    position: relative;
+  }
+  &__content {
+    width: calc((9 / 12 * 100%) + 2.4rem);
+    position: relative;
+    z-index: 10;
+    .head {
+      .btn-gradient {
+        margin-top: 0.8rem;
+      }
+    }
+    .textbox {
+      margin-top: 1.6rem;
+      @include md-min {
+        max-width: 51.6rem;
+      }
+      .button-gr {
+        margin-top: 2.4rem;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  }
+  &__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc((4.5 / 12 * 100%) + 2.4rem);
+    z-index: 1;
+    .box-wrap {
+      position: relative;
+      .img-man {
+        position: relative;
+        z-index: 10;
+        width: fit-content;
+        img {
+          width: 100%;
+        }
+      }
+      .polygon {
+        @include center(xy);
+        top: 57%;
+        left: 30%;
+        width: 54.5rem;
+        height: 42rem;
+        z-index: 1;
+        img {
+          width: 100%;
+        }
+        @include lg {
+          left: 40%;
+        }
+      }
+    }
+    @include lg {
+    }
+  }
+  @include lg {
+    &__image {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  @include md {
+    &__content {
+      width: 100%;
+    }
+    &__image {
+      position: static;
+      transform: none;
+      width: initial;
+      margin-top: 2rem;
+      .img-man {
+        margin-inline: auto;
+      }
+    }
+  }
+}

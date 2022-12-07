@@ -1,0 +1,60 @@
+.card-box {
+  --size-img: 9.6rem;
+  --spacing: 2rem;
+  border-radius: $base-radius;
+  position: relative;
+  overflow: hidden;
+  padding: 2rem;
+  text-align: center;
+  background-color: $white-cl;
+
+  &__thumb {
+    .img-inner {
+      img {
+        @include circle(var(--size-img));
+        display: block;
+        margin-inline: auto;
+      }
+    }
+  }
+  &__content {
+    margin-top: var(--spacing);
+    .name {
+      a {
+        @include text(pb, var(--h4-fs), var(--h4-lh), $body-text, capitalize);
+        display: block;
+      }
+    }
+    .meta {
+      margin-top: 0.4rem;
+    }
+    .desc {
+      max-width: 20rem;
+      margin-inline: auto;
+      margin-top: var(--spacing);
+      @include overtext(2);
+    }
+    .social {
+      margin-top: var(--spacing);
+      @include center(flex);
+      column-gap: 1.6rem;
+      &-link {
+        @include size(3.2rem);
+        @include center(flex);
+        background-color: $white-cl;
+        > * {
+          display: block;
+          @include transition(all $t);
+        }
+        &:hover {
+          > * {
+            filter: brightness(80%);
+            -webkit-filter: brightness(80%);
+            -moz-filter: brightness(80%);
+            @include transition(all $t);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// utilities class
+
+$heading: (h1, h2, h3, h4, h5, h6);
+@each $key in $heading {
+  .#{$key} {
+    font-size: var(--#{$key}-fs);
+    line-height: var(--#{$key}-lh);
+  }
+}
+
+// css heading
+.heading {
+  font-family: kb; //font bold
+}
+
+// css body text
+$body: (13, 12);
+@each $key in $body {
+  .body-#{$key} {
+    font-size: var(--body#{$key}-fs);
+    line-height: var(--body#{$key}-lh);
+  }
+}
+.heading-sc {
+  .sub-title {
+    @include text(pb, var(--h6-fs), var(--h6-lh), #999, uppercase);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.8rem;
+  }
+  .title-sc {
+    font-size: var(--h2-fs);
+    line-height: var(--h2-lh);
+    font-family: kb;
+  }
+}

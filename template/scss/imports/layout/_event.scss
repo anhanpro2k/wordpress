@@ -1,0 +1,162 @@
+.event {
+  padding-block: 5rem;
+  &-links {
+    @include center(flex);
+    column-gap: 0.8rem;
+    margin-top: 4rem;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      height: 0.5rem;
+    }
+    @include xs {
+      justify-content: flex-start;
+      padding-bottom: 0.5rem;
+    }
+    .link {
+      flex-shrink: 0;
+      color: $body-text;
+      padding: 1rem 2rem;
+      @include transition(all $t);
+      border-radius: 8px;
+      font-family: psb;
+
+      &:hover,
+      &.active {
+        background: #1a1a1a;
+        color: $white-cl;
+        @include transition(all $t);
+      }
+    }
+  }
+  &-list {
+    margin-top: 3.2rem;
+    &__item {
+      --w-date: 24rem;
+      --w-content: calc(100% - var(--w-date));
+      background: $white-cl;
+      @include border($border-light);
+      border-radius: $base-radius;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2.4rem;
+      .item-img {
+        height: 32rem;
+        overflow: hidden;
+        img {
+          @include img-cover;
+          @include transition(all $t $cubic);
+        }
+      }
+      .item-bot {
+        display: flex;
+
+        &__date {
+          padding: 1.4rem 1.7rem;
+          width: var(--w-date);
+          background-color: $primary;
+
+          > * {
+            color: $white-cl;
+          }
+        }
+        &__content {
+          padding: 2.4rem 2.4rem 2.4rem 4.8rem;
+          background-color: $white-cl;
+          width: var(--w-content);
+          .title {
+            a {
+              color: $body-text;
+              @include transition(all $t);
+            }
+          }
+          .desc {
+            @include overtext(2);
+          }
+          .button-gr {
+            margin-top: 2.4rem;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.2rem 2.4rem;
+            .btn-more,
+            .btn-main {
+              min-width: 16rem;
+            }
+            .btn-more {
+              height: var(--height-button);
+              padding-block: 20px;
+              border-radius: $base-radius;
+              color: $body-text;
+              @include transition(all $t);
+              font-family: psb;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              &:hover {
+                color: $white-cl;
+                background: #c94a4f;
+                @include transition(all $t);
+              }
+            }
+          }
+          @include lg {
+            padding: 2.4rem;
+          }
+        }
+      }
+      &:hover {
+        .item-img {
+          img {
+            @include transform(scale(1.2));
+            @include transition(all $t $cubic);
+          }
+        }
+        .item-bot {
+          &__content {
+            .title {
+              a {
+                color: $primary;
+                @include transition(all $t);
+              }
+            }
+          }
+        }
+      }
+      @include sm {
+        --w-date: 50%;
+      }
+      @include xs {
+        .item-bot {
+          --w-date: 100%;
+          --w-content: 100%;
+          flex-wrap: wrap;
+          &__content {
+            padding: 1.6rem;
+          }
+        }
+      }
+      @include xxs {
+        .item-bot {
+          &__content {
+            .button-gr {
+              > * {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &-regis {
+    &__buttons {
+      @include center(flex);
+      flex-wrap: wrap;
+      gap: 1rem 2.4rem;
+      .btn-main {
+        padding-inline: 1.2rem;
+        min-width: 16rem;
+      }
+    }
+  }
+}

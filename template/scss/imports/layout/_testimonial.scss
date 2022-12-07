@@ -1,0 +1,31 @@
+.testimonial {
+  background: #f0f0f0;
+  padding-block: 2.4rem;
+  &-slider {
+    --size-img: 12rem;
+    margin-inline: auto;
+    @include md-min {
+      max-width: calc(50% + 4.8rem);
+    }
+
+    .test-box {
+      margin-top: -1.6rem;
+      text-align: center;
+      > * {
+        margin-top: 1.6rem;
+      }
+    }
+    .test-img {
+      img {
+        display: block;
+        @include circle(var(--size-img));
+        margin-inline: auto;
+      }
+    }
+    .test-content {
+      .by {
+        margin-top: 1.6rem;
+      }
+    }
+  }
+}

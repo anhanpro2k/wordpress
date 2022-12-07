@@ -1,0 +1,62 @@
+.faq {
+  &-wrap {
+    padding: 9.5rem 4.8rem;
+    background: $white-cl;
+
+    @include sm {
+      padding: 4.8rem 2.4rem;
+    }
+  }
+  &-acc {
+    .acc {
+      padding-bottom: 3.8rem;
+      border-bottom: 1px solid rgba($color: #c94a4f, $alpha: 0.2);
+      + .acc {
+        margin-top: 2.4rem;
+      }
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        &.active {
+          .acc-expand {
+            color: $white-cl;
+            background-color: $primary;
+            @include transform(rotate(-135deg));
+          }
+        }
+      }
+      &-expand {
+        @include circle(4rem);
+        @include center(flex);
+        background-color: $red-active;
+        color: $primary;
+        @include transition(all $t $cubic);
+        flex-shrink: 0;
+        cursor: pointer;
+        &:hover {
+          color: $white-cl;
+          background-color: $primary;
+          @include transition(all $t $cubic);
+        }
+        > * {
+          display: block;
+        }
+      }
+      &-content {
+        display: none;
+      }
+    }
+  }
+  @include xs {
+    &-heading {
+      .heading-sc {
+        .title-sc {
+          font-size: var(--h3-fs);
+          line-height: var(--h3-lh);
+        }
+      }
+    }
+  }
+}

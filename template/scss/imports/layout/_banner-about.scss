@@ -1,0 +1,87 @@
+.banner-about {
+  position: relative;
+  isolation: isolate;
+  height: calc((660 / 1728) * 100vw);
+  @include center(flex);
+  min-height: 60rem;
+  background: $gradient-light;
+
+  &-bg {
+    @include fullscreen;
+    z-index: -1;
+    img {
+      @include img-cover;
+    }
+  }
+
+  &-row {
+    .col-content {
+      @include md-min {
+        width: calc((6 / 12 * 100%) + 2.4rem);
+      }
+    }
+  }
+  &__content {
+    .textbox {
+      border-radius: $base-radius;
+      background-color: $white-cl;
+    }
+    .list,
+    .desc {
+      font-family: psb;
+    }
+    .list-wrap {
+      padding: 0 0.8rem 0.8rem;
+    }
+    .list {
+      padding-left: 2rem;
+      .li {
+        position: relative;
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          content: "\2022";
+          color: currentColor;
+          font-weight: bold;
+          display: inline-block;
+          width: 1em;
+          margin-left: -1.5rem;
+        }
+      }
+    }
+  }
+  &__img {
+    position: relative;
+    @include md-min {
+      display: none;
+    }
+    .img-wrap {
+      position: relative;
+      width: fit-content;
+      margin-inline: auto;
+
+      .img-main {
+        position: absolute;
+        @include center(xy);
+        max-width: 45rem;
+        width: 75vw;
+      }
+      .img-polygon {
+        max-width: 70rem;
+        width: 100%;
+      }
+    }
+  }
+  @include md {
+    height: initial;
+    min-height: initial;
+    display: block;
+    > .container {
+      padding-block: calc(3rem + var(--height-header)) 5rem;
+    }
+    &-bg {
+      display: none;
+    }
+  }
+}

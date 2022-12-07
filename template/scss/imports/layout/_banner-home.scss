@@ -1,0 +1,95 @@
+.banner-home {
+  padding-block: 11rem;
+  .col-wrap {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: calc(6 / 12 * 100vw);
+  }
+  &__content {
+    --spacing: 2.4rem;
+    max-width: 56rem;
+    margin-top: calc(-1 * var(--spacing));
+    > * {
+      margin-top: var(--spacing);
+    }
+    .textbox {
+      .desc {
+        margin-top: var(--spacing);
+      }
+    }
+    .button-gr {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      .btn-gradient {
+        height: 6.6rem;
+        border-radius: 6.4rem;
+        padding-inline: 3.2rem;
+        @include xs {
+          height: 4.4rem;
+          padding-inline: 1.6rem;
+        }
+      }
+    }
+    .or {
+      .link {
+        font-family: psb;
+        color: $body-text;
+        padding: 1rem 2rem;
+      }
+    }
+  }
+  &__image {
+    width: fit-content;
+    position: relative;
+    .polygon-img {
+      transform: translate(-10%, 6rem);
+      min-width: 80rem;
+    }
+    .img-main {
+      @include center(xy);
+      top: 45%;
+      left: 48%;
+      z-index: 5;
+    }
+  }
+  @include lg {
+    &__image {
+      .polygon-img {
+        transform: translate(-17%, 6rem);
+      }
+      .img-main {
+        left: 40%;
+      }
+    }
+  }
+  @include md {
+    padding-block: 5rem;
+    .col-wrap {
+      position: static;
+      transform: none;
+      width: 100%;
+    }
+  }
+  @include sm {
+    padding-block: 2rem;
+    &__image {
+      width: 100%;
+      margin-top: 30vw;
+      .img-main {
+        left: 52%;
+        top: 30%;
+        width: 61vw;
+      }
+      .polygon-img {
+        min-width: initial;
+        width: 90%;
+        display: block;
+        transform: none;
+      }
+    }
+  }
+}

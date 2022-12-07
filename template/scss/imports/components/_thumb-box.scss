@@ -1,0 +1,128 @@
+.thumb-box {
+  + .thumb-box {
+    margin-top: 1.6rem;
+  }
+
+  &:hover {
+    .thumb-img {
+      .img-wrap img {
+        @include transform(scale(1.2));
+        @include transition(all $t $cubic);
+      }
+    }
+    .thumb-content .title a {
+      color: $primary;
+      @include transition(all $t);
+    }
+  }
+
+  .thumb-head {
+    gap: 2rem 2.4rem;
+    margin-bottom: 0.8rem;
+  }
+  .thumb-img {
+    flex-shrink: 0;
+    @include xs-min {
+      width: 24rem;
+    }
+    .img-wrap {
+      @include image-responsive(240, 160);
+      overflow: hidden;
+      img {
+        @include transition(all $t $cubic);
+      }
+    }
+  }
+  .thumb-content {
+    @include lg-min {
+      max-width: 31.6rem;
+    }
+    .title {
+      a {
+        color: #191919;
+        font-family: bb;
+        @include transition(all $t);
+      }
+    }
+    .desc {
+      font-family: br;
+      margin-top: 0.8rem;
+      @include overtext(4);
+      letter-spacing: 0.1px;
+    }
+  }
+  .thumb-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid $border-light;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .thumb-tag {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    .tag {
+      background: #f0f0f0;
+      border-radius: 1rem;
+      font-family: br;
+      letter-spacing: -0.149625px;
+      color: $body-text;
+      @include transition(all $t);
+      &:hover {
+        background-color: $red-active;
+        @include transition(all $t);
+      }
+    }
+  }
+  .thumb-meta {
+    display: flex;
+    align-items: center;
+
+    &-auth {
+      display: flex;
+      align-items: center;
+      column-gap: 0.4rem;
+    }
+    &-avt {
+      img {
+        @include circle(3.2rem);
+        display: block;
+      }
+    }
+    &-name {
+      font-family: psb;
+      color: #27292b;
+    }
+    &-time {
+      display: flex;
+      align-items: center;
+      .time-item {
+        font-size: var(--body13-fs);
+        color: #61686b;
+        position: relative;
+        &::before {
+          content: "\2022";
+          color: currentColor;
+          font-weight: bold;
+          display: inline-block;
+          width: 0.4rem;
+          margin-inline: 0.4rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+  @include xs {
+    .thumb-head {
+      flex-direction: column;
+    }
+    .thumb-meta {
+      flex-wrap: wrap;
+      row-gap: 0.8rem;
+    }
+  }
+}

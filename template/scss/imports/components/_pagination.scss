@@ -1,0 +1,31 @@
+.pagination {
+  margin-top: 3.2rem;
+  ul.page-numbers {
+    @include center(flex);
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    li > * {
+      background-color: #fff;
+      @include transition(all $t);
+      @include circle(3.2rem);
+      border: 1px solid #dadee0;
+      line-height: 1;
+      @include center(flex);
+      color: #27292b;
+      font-family: br;
+      letter-spacing: 0.01rem;
+    }
+    li > span,
+    li > *:hover {
+      background-color: $primary;
+      @include transition(all $t);
+      color: $white-cl;
+    }
+    .next,
+    .prev {
+      color: $primary;
+      background-color: $red-active;
+      border: none;
+    }
+  }
+}

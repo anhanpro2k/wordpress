@@ -1,0 +1,32 @@
+.blog-detail {
+  padding-block: 7.2rem 14.5rem;
+  @include sm {
+    padding-block: 4rem 10rem;
+  }
+  @include xs {
+    padding-block: 2rem;
+  }
+  &__related {
+    padding-top: 0.8rem;
+    border-top: 1px solid #357a9b;
+    .thumb-box {
+      .thumb-head {
+        @include xs-min {
+          flex-direction: row-reverse;
+        }
+        justify-content: space-between;
+      }
+      .thumb-content {
+        max-width: initial;
+      }
+      .thumb-img {
+        @include xs-min {
+          width: 18rem;
+        }
+        .img-wrap {
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}

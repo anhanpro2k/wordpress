@@ -1,0 +1,71 @@
+/* CORE - MIXINS*/
+@import "imports/core/reset";
+@import "imports/core/variables";
+@import "imports/mixins/breakpoint";
+@import "imports/mixins/global";
+@import "imports/mixins/container";
+@import "imports/mixins/grid";
+@import "imports/core/colors";
+@import "imports/core/layouts";
+@import "imports/core/loading";
+@import "imports/core/animations";
+
+// VENDORS
+// @import "imports/vendors/bootstrap_mini";
+@import "imports/vendors/libs";
+@import "imports/vendors/aos";
+@import "imports/vendors/swiper";
+
+// UTILITIES
+@import "imports/utilities/grid";
+@import "imports/utilities/spacing";
+@import "imports/utilities/utilities";
+
+// components
+@import "imports/components/global_class";
+@import "imports/components/components";
+@import "imports/components/buttons";
+@import "imports/components/typography";
+@import "imports/components/pagination";
+@import "imports/components/close-square";
+@import "imports/components/sidebox";
+@import "imports/components/card-box";
+@import "imports/components/course-box";
+@import "imports/components/caption";
+@import "imports/components/thumb-box";
+@import "imports/components/custom-aos";
+@import "imports/components/cat-tab";
+@import "imports/components/popup";
+@import "imports/components/custom-swiper";
+@import "imports/components/panel-tab";
+
+// LAYOUT
+@import "imports/layout/header";
+@import "imports/layout/nav";
+@import "imports/layout/footer";
+@import "imports/layout/article";
+@import "imports/layout/blog-detail";
+@import "imports/layout/blog";
+@import "imports/layout/aside";
+@import "imports/layout/event-detail";
+@import "imports/layout/event";
+@import "imports/layout/course-detail";
+@import "imports/layout/course-list";
+@import "imports/layout/banner-course";
+@import "imports/layout/banner-about";
+@import "imports/layout/banner-home";
+@import "imports/layout/about";
+@import "imports/layout/testimonial";
+@import "imports/layout/target";
+@import "imports/layout/get";
+@import "imports/layout/going";
+@import "imports/layout/mentor";
+@import "imports/layout/services";
+@import "imports/layout/guide";
+@import "imports/layout/faq";
+@import "imports/layout/fan";
+
+//  Pages
+@import "imports/pages/home";
+@import "imports/pages/contact";
+@import "imports/pages/about";

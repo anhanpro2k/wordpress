@@ -1,0 +1,128 @@
+.get {
+  padding-block: 12rem;
+  &-list {
+    padding-top: var(--pd-section-sm);
+    &__item {
+      height: 100%;
+      overflow: hidden;
+      .item {
+        background: linear-gradient(
+          268.46deg,
+          rgba(250, 250, 250, 0.8) 2.62%,
+          rgba(255, 255, 255, 0.8) 86.67%
+        );
+        border: 1px solid #f0f0f0;
+        backdrop-filter: blur(1rem);
+        border-radius: $base-radius;
+        padding: 2.4rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        &-image {
+          img {
+            display: block;
+          }
+        }
+        &-button,
+        &-content > * {
+          margin-top: 2.4rem;
+        }
+        &-content {
+          margin-bottom: auto;
+        }
+
+        &-title {
+          @include text(kb, var(--h3-fs), var(--h3-lh), $primary, capitalize);
+        }
+        &-text {
+          font-family: br;
+          @include md-min {
+            min-height: 18.8rem;
+          }
+        }
+      }
+      &.item-scroll {
+        position: relative;
+        isolation: isolate;
+        &::after {
+          content: "";
+          @include fullscreen;
+          border-radius: $base-radius;
+          background-color: $primary;
+          z-index: -1;
+          @include transition(all $t2 $cubic);
+        }
+      }
+      &.is-inview {
+        &::after {
+          @include transform(translateY(100%));
+          opacity: 0;
+        }
+      }
+    }
+  }
+  &-image {
+    .img-wrap {
+      position: relative;
+      .img-main {
+        img {
+          margin-inline: auto;
+          display: block;
+        }
+      }
+      .polygon {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        width: 80rem;
+      }
+    }
+  }
+  @include lg {
+    &-list {
+      &__item {
+        .item {
+          &-title {
+            height: 7.6rem;
+          }
+        }
+      }
+    }
+  }
+  @include md {
+    padding-block: 6rem;
+
+    &-list {
+      &__item {
+        .item {
+          &-title {
+            height: initial;
+          }
+        }
+      }
+    }
+    &-image {
+      .img-wrap {
+        .img-main {
+          margin-inline: -7.2rem;
+        }
+        .polygon {
+          width: 90%;
+          img {
+            display: block;
+            margin-inline: auto;
+          }
+        }
+      }
+    }
+  }
+  @include sm {
+    padding-block: 4rem;
+  }
+  @include xs {
+    padding-block: 1.6rem;
+  }
+}

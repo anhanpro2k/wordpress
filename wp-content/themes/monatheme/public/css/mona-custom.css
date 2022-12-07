@@ -1,0 +1,418 @@
+/*** Import *****/
+
+@import url('404.css');
+@import url('loading-btn.css');
+@import url('loading-group.css');
+
+/*** End ****/
+
+.blog-info-tag span:before {
+    content: ',';
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    height: 100%;
+    font-size: 16px;
+    width: auto;
+    padding-right: 5px;
+}
+
+.blog-info-tag span {
+    position: relative;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+.blog-info-tag span:last-child:before {
+    display: none
+}
+
+.wpcf7 form .wpcf7-response-output {
+    border: 0;
+    margin: 15px 0;
+    padding: 0;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+    color: #76f183;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+    color: red;
+}
+
+.blog-detail__main .blog-detail__article .mona-content p {
+    margin: 1.6rem 0;
+}
+
+.blog-detail__main .blog-detail__article .mona-content figure.wp-block-image img {
+    display: block;
+    height: auto;
+    border-radius: 8px;
+    margin: 1.6rem auto;
+    object-fit: cover;
+    min-height: 40rem;
+}
+
+.blog-detail__main .blog-detail__article .mona-content figure.wp-block-image figcaption {
+    font-size: 1.2rem;
+    text-align: center;
+    letter-spacing: -0.149625px;
+}
+
+.blog-detail__main .blog-detail__article .mona-content {
+    color: #333;
+}
+
+.mona-content {
+    color: #333;
+}
+
+.event .event-list .event-list__item .item-bot__date .date .date-time.f-bold.mona-content * {
+    color: white;
+}
+
+.topic.active {
+    background: #fdecef !important;
+    transition: all 0.4s !important;
+    -webkit-transition: all 0.4s !important;
+    -moz-transition: all 0.4s !important;
+    -ms-transition: all 0.4s !important;
+    -o-transition: all 0.4s !important;
+}
+
+.blog-page .blog .textbox.ta-center h1 {
+    margin-bottom: 2rem;
+}
+
+.empty-mess .empty-img {
+    width: 6.4rem;
+}
+
+.empty-mess {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.empty-mess .title-large {
+    font-family: "UtmSeagull";
+    font-size: 24px;
+    color: #8b0304;
+    margin-bottom: 10px;
+}
+
+.empty-mess .title-large {
+    color: #3e2714;
+}
+
+.empty-mess .title-large span {
+    color: #C94A4F;
+}
+
+.current-menu-ancestor.menu-item-has-children.dropdown > a {
+    color: #333;
+}
+
+.current-menu-ancestor.menu-item-has-children.dropdown > .submenu > .current-menu-item > a {
+    color: #333;
+}
+
+.menu-item.parent.current-menu-ancestor.menu-item-has-children.dropdown > a {
+    background-color: #fdecef;
+}
+
+.newsletter-form .form-wrapper button {
+    z-index: 1;
+}
+
+
+/*FORM*/
+
+.newsletter-form .form-wrapper form .form-field {
+    position: relative;
+}
+
+.newsletter-form .form-wrapper form .form-field .wpcf7-not-valid-tip {
+    position: absolute;
+    top: 1.4rem;
+    font-size: 1.2rem;
+    right: 2rem;
+}
+
+.newsletter-form .form-wrapper form .wpcf7-response-output {
+    position: absolute;
+}
+
+.newsletter-form .form-wrapper form.wpcf7-form.invalid .wpcf7-response-output {
+    position: absolute;
+    color: #ffdc39;
+}
+
+.newsletter-form .form-wrapper form.wpcf7-form.send .wpcf7-response-output {
+    position: absolute;
+    color: #7af385;
+}
+
+.newsletter-form .form-wrapper .wpcf7 form.sent .wpcf7-response-output {
+    color: #7af385;
+}
+
+.newsletter-form .form-wrapper form .btn-hide {
+    display: none;
+}
+
+.newsletter-form .form-wrapper form button {
+    position: relative;
+}
+
+.newsletter-form .form-wrapper form .wpcf7-spinner {
+    position: absolute;
+    left: -1.8rem;
+}
+
+.course-detail__info .row.gy-1 .col-main {
+    width: 100%;
+}
+
+.course-list .course-detail__info .info-content__title.h3.f-bold.aos-init.aos-animate {
+    text-align: center;
+    margin: 3rem;
+}
+
+.banner-about .container .banner-about__content .list-wrap.mt-6.mona-content ul {
+    list-style: disc;
+}
+
+.banner-about .container .banner-about__content .list-wrap.mt-6.mona-content * {
+    color: #333;
+    font-family: psb;
+}
+
+.banner-about .container .banner-about__content .list-wrap.mt-6.mona-content li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "\2022";
+    color: currentColor;
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1.5rem;
+}
+
+.about-content .about-content__item.mona-content h3 {
+    font-size: var(--h5-fs);
+    line-height: var(--h5-lh);
+    font-family: pb;
+    margin-bottom: 1.6rem;
+}
+
+.footer-links .footer-link {
+    padding-block: 1rem;
+    display: block;
+    font-family: psb;
+    margin-top: 0.8rem;
+}
+
+.footer-row .menu-menu-footer-col-2-container .menu li a {
+    padding-block: 1rem;
+    display: block;
+    font-family: psb;
+    margin-top: 0.8rem;
+}
+
+body.blog {
+    padding: 0;
+}
+
+.popup.popup-register .popup-form .btn-hide {
+    display: none;
+    position: absolute;
+}
+
+.submit-form.ta-center .btn-gradient.form-submit {
+    position: relative;
+}
+
+.popup.popup-booking.mona-course-popup.is-show .popup-content .booking-form button {
+    color: transparent;
+    background: transparent;
+    border: none;
+    position: relative;
+}
+
+.popup.popup-register .popup-form .wpcf7-spinner {
+    position: absolute;
+    left: 2rem;
+    bottom: 1rem;
+}
+
+.popup.popup-register .popup-form .wpcf7-not-valid-tip {
+    position: absolute;
+    right: 0.6rem;
+    bottom: -1.3rem;
+    font-size: 1.2rem;
+}
+
+.popup.popup-register .popup-form .form-field input.disabled {
+    pointer-events: none
+}
+
+
+/*HOME PAGE*/
+
+.title.h1.heading p strong {
+    background: linear-gradient(103.84deg, #de3551 -22.24%, #ff8d4c 121.75%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.target-single .better .desc.c-white.mt-6.mona-content {
+    color: white;
+}
+
+.course-list__head.flex-center-between.flex-wrap .list-tab.cat-tab a:hover {
+    cursor: pointer;
+}
+
+.going-tab__content .swiper-slide .content-item__img img {
+    width: 100%;
+}
+
+.btn-hide {
+    display: none;
+}
+
+
+/*BOOKING FORM
+*/
+
+.popup.popup-booking.mona-course-popup .wpcf7-spinner {
+    position: absolute;
+    left: 3rem;
+    bottom: 1rem;
+}
+
+.popup.popup-booking.mona-course-popup .wpcf7-not-valid-tip {
+    position: absolute;
+    right: -1.4rem;
+    bottom: -2.3rem;
+    font-size: 1.2rem;
+}
+
+.popup.popup-booking.mona-course-popup .wpcf7-response-output {
+    position: absolute;
+    bottom: -1rem;
+}
+
+
+/*BOOKING FORM EVENT
+*/
+
+.popup.popup-booking.mona-event-popup .wpcf7-spinner {
+    position: absolute;
+    left: 3rem;
+    bottom: 1rem;
+}
+
+.popup.popup-booking.mona-event-popup .wpcf7-not-valid-tip {
+    position: absolute;
+    right: 0.6rem;
+    bottom: -2.3rem;
+    font-size: 1.2rem;
+}
+
+.popup.popup-booking.mona-event-popup .wpcf7-response-output {
+    position: absolute;
+    bottom: -1rem;
+}
+
+.popup.popup-booking.mona-event-popup.is-show .popup-content .booking-form button {
+    color: transparent;
+    background: transparent;
+    border: none;
+    position: relative;
+}
+
+.btn-success.btn-sec .icon-success {
+    display: inline-block;
+}
+
+.btn-main .icon-success {
+    display: none;
+}
+
+.popup-close {
+    overflow: hidden;
+}
+
+.popup-close img {
+    width: 12px;
+}
+
+.blog-detail-page.default-page .col-8-md {
+    width: 100%;
+}
+
+.mentor-page.blog-page .card-box {
+    border: 1px #c94a4f solid;
+    animation: fadeUp 0.75s ease-in-out;
+}
+
+.mentor-page .sc-mentor .btn-loadmore {
+    width: 13rem;
+    margin: 4rem auto;
+}
+
+.f-r.group-cmt-info {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 2rem;
+}
+
+.f-r.group-cmt-info .f-c {
+    width: 50%;
+    padding: 0px 15px;
+}
+
+.f-r.group-cmt-content {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+}
+
+.aside-wrap .aside-calendar .calendar-head {
+    display: flex;
+    align-items: center;
+    column-gap: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.aside-wrap .aside-calendar .calendar-times, .aside-wrap .aside-calendar .calendar-title {
+    margin-top: 0;
+}
+
+.thumb-box .social {
+    display: flex;
+    align-items: center;
+}
+
+.thumb-box .social .social-link img {
+    display: block;
+}
+
+.thumb-box .social .social-link:hover {
+    opacity: 0.5;
+}
+
+.thumb-box .social .social-link {
+    transition: .4s ease;
+}

@@ -1,0 +1,188 @@
+$spacers: (
+  "auto": auto,
+  "0": 0,
+  "1": $space,
+  "2": $space * 2,
+  "3": $space * 3,
+  "4": $space * 4,
+  "5": $space * 5,
+  "6": $space * 6,
+  "7": $space * 7,
+  "8": $space * 8,
+  "9": $space * 9,
+  "10": $space * 10,
+);
+
+@mixin make-spacing-utils($breakpoints: $grid-breakpoints) {
+  @each $key, $val in $spacers {
+    .p-#{$key} {
+      padding: #{$val};
+    }
+    .pt-#{$key} {
+      padding-top: #{$val};
+    }
+    .pr-#{$key} {
+      padding-right: #{$val};
+    }
+    .pb-#{$key} {
+      padding-bottom: #{$val};
+    }
+    .pl-#{$key} {
+      padding-left: #{$val};
+    }
+    .px-#{$key} {
+      padding-right: #{$val};
+      padding-left: #{$val};
+    }
+    .py-#{$key} {
+      padding-top: #{$val};
+      padding-bottom: #{$val};
+    }
+
+    .m-#{$key} {
+      margin: #{$val};
+    }
+    .mt-#{$key} {
+      margin-top: #{$val};
+    }
+    .mr-#{$key} {
+      margin-right: #{$val};
+    }
+    .mb-#{$key} {
+      margin-bottom: #{$val};
+    }
+    .ml-#{$key} {
+      margin-left: #{$val};
+    }
+    .mx-#{$key} {
+      margin-right: #{$val};
+      margin-left: #{$val};
+    }
+    .my-#{$key} {
+      margin-top: #{$val};
+      margin-bottom: #{$val};
+    }
+    @each $breakpoint in map-keys($breakpoints) {
+      $infix: breakpoint-infix($breakpoint, $breakpoints);
+      @include media-breakpoint-down($breakpoint, $breakpoints) {
+        .p-#{$key}#{$infix} {
+          padding: #{$val};
+        }
+        .pt-#{$key}#{$infix} {
+          padding-top: #{$val};
+        }
+        .pr-#{$key}#{$infix} {
+          padding-right: #{$val};
+        }
+        .pb-#{$key}#{$infix} {
+          padding-bottom: #{$val};
+        }
+        .pl-#{$key}#{$infix} {
+          padding-left: #{$val};
+        }
+        .px-#{$key}#{$infix} {
+          padding-right: #{$val};
+          padding-left: #{$val};
+        }
+        .py-#{$key}#{$infix} {
+          padding-top: #{$val};
+          padding-bottom: #{$val};
+        }
+
+        .m-#{$key}#{$infix} {
+          margin: #{$val};
+        }
+        .mt-#{$key}#{$infix} {
+          margin-top: #{$val};
+        }
+        .mr-#{$key}#{$infix} {
+          margin-right: #{$val};
+        }
+        .mb-#{$key}#{$infix} {
+          margin-bottom: #{$val};
+        }
+        .ml-#{$key}#{$infix} {
+          margin-left: #{$val};
+        }
+        .mx-#{$key}#{$infix} {
+          margin-right: #{$val};
+          margin-left: #{$val};
+        }
+        .my-#{$key}#{$infix} {
+          margin-top: #{$val};
+          margin-bottom: #{$val};
+        }
+      }
+    }
+  }
+}
+@include make-spacing-utils;
+// @mixin spacing-utils($bp: "") {
+//   @each $key, $val in $spacers {
+//     .p-#{$key}#{$bp} {
+//       padding: #{$val} !important;
+//     }
+//     .pt-#{$key}#{$bp} {
+//       padding-top: #{$val} !important;
+//     }
+//     .pr-#{$key}#{$bp} {
+//       padding-right: #{$val} !important;
+//     }
+//     .pb-#{$key}#{$bp} {
+//       padding-bottom: #{$val} !important;
+//     }
+//     .pl-#{$key}#{$bp} {
+//       padding-left: #{$val} !important;
+//     }
+//     .px-#{$key}#{$bp} {
+//       padding-right: #{$val} !important;
+//       padding-left: #{$val} !important;
+//     }
+//     .py-#{$key}#{$bp} {
+//       padding-top: #{$val} !important;
+//       padding-bottom: #{$val} !important;
+//     }
+
+//     .m-#{$key}#{$bp} {
+//       margin: #{$val} !important;
+//     }
+//     .mt-#{$key}#{$bp} {
+//       margin-top: #{$val} !important;
+//     }
+//     .mr-#{$key}#{$bp} {
+//       margin-right: #{$val} !important;
+//     }
+//     .mb-#{$key}#{$bp} {
+//       margin-bottom: #{$val} !important;
+//     }
+//     .ml-#{$key}#{$bp} {
+//       margin-left: #{$val} !important;
+//     }
+//     .mx-#{$key}#{$bp} {
+//       margin-right: #{$val} !important;
+//       margin-left: #{$val} !important;
+//     }
+//     .my-#{$key}#{$bp} {
+//       margin-top: #{$val} !important;
+//       margin-bottom: #{$val} !important;
+//     }
+//   }
+// }
+
+// @include spacing-utils;
+
+// @include xs-min {
+//   @include spacing-utils($bp: "-xs");
+// }
+// @include sm-min {
+//   @include spacing-utils($bp: "-sm");
+// }
+// @include md-min {
+//   @include spacing-utils($bp: "-md");
+// }
+// @include lg-min {
+//   @include spacing-utils($bp: "-lg");
+// }
+// @include xl-min {
+//   @include spacing-utils($bp: "-xl");
+// }

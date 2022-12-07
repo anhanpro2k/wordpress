@@ -1,0 +1,48 @@
+.close-square {
+  --size-btn: 4.4rem;
+  @include size(var(--size-btn));
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.05),
+    0px 20px 40px rgba(92, 103, 153, 0.2);
+  border-radius: $base-radius;
+  @include center(flex);
+  cursor: pointer;
+  margin-bottom: 4.8rem;
+  .close {
+    @include transition(all $t $cubic);
+    position: relative;
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+      width: 2.5rem;
+      height: 0.1rem;
+      background-color: $body-text;
+      border-radius: 10rem;
+      @include transition(all $t $cubic);
+
+      &:nth-child(1) {
+        @include transform(translate(-50%, -50%) rotate(45deg));
+      }
+      &:nth-child(2) {
+        @include transform(translate(-50%, -50%) rotate(-45deg));
+      }
+    }
+  }
+  &:hover {
+    background-color: $red-active;
+    @include transition(all $t $cubic);
+
+    .close {
+      span {
+        @include transition(all $t2 $cubic);
+        &:nth-child(1) {
+          @include transform(translate(-50%, -50%) rotate(25deg));
+        }
+        &:nth-child(2) {
+          @include transform(translate(-50%, -50%) rotate(-25deg));
+        }
+      }
+    }
+  }
+}

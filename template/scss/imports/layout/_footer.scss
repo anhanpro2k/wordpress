@@ -1,0 +1,179 @@
+// css footer
+.footer {
+  background: $gradient-light;
+  padding-block: 5rem;
+  @include xs {
+    padding-block: 3.2rem;
+  }
+  * {
+    color: $white-cl;
+  }
+  &-logo {
+    @include md-min {
+      margin-bottom: 8.5rem;
+    }
+    img {
+      display: block;
+    }
+  }
+  &-col {
+    height: 100%;
+  }
+  &-col-row {
+    .col-wrap {
+      &:nth-child(2) {
+        @include md-min {
+          text-align: center;
+        }
+      }
+      .link {
+        font-family: psb;
+        @include transition(all $t);
+
+        &:hover {
+          opacity: 0.5;
+          @include transition(all $t);
+        }
+      }
+    }
+    @include md {
+      display: none;
+    }
+    &.--mobile {
+      .row-wrap {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 0.8rem;
+        gap: 1rem 2rem;
+      }
+      @include md-min {
+        display: none;
+      }
+      @include md {
+        display: block;
+      }
+    }
+  }
+  &-row {
+    > .row > .col-wrap {
+      &:nth-child(2) {
+        .footer-col {
+          @include md-min {
+            margin-inline: 2rem;
+            padding-inline: 4.8rem;
+            border-left: 1px solid $white-cl;
+            border-right: 1px solid $white-cl;
+          }
+        }
+      }
+    }
+  }
+  &-links {
+    .footer-link {
+      padding-block: 1rem;
+      display: block;
+      font-family: psb;
+      margin-top: 0.8rem;
+    }
+  }
+  &-chat {
+    .btn-chat {
+      height: var(--height-button);
+      @include center(flex);
+      width: 100%;
+      @include border(#fafafa);
+      border-radius: $base-radius;
+      column-gap: 1rem;
+      font-family: psb;
+      color: #fafafa;
+      @include transition(all $t);
+
+      .icon {
+        > * {
+          display: block;
+          @include transition(all $t);
+        }
+      }
+      &:hover {
+        background-color: $red-active;
+        @include transition(all $t);
+        color: $primary;
+        .icon > * {
+          color: $primary;
+          @include transition(all $t);
+        }
+      }
+    }
+  }
+  &-newsletter {
+    margin-top: 2.4rem;
+    padding-top: 2.4rem;
+    border-top: 1px solid $white-cl;
+    .newsletter {
+      &-form {
+        --size-submit: 3.6rem;
+        margin-top: 1.6rem;
+        form {
+          position: relative;
+          .form-field {
+            padding: 0;
+          }
+          .form-ctr {
+            width: 100%;
+            height: var(--height-input);
+            background: #fafafa;
+            border: 0.5px solid #cccccc;
+            border-radius: 3rem;
+            padding-inline: calc(var(--size-submit) + 2rem) 1.6rem;
+            outline: none;
+            border: 1px solid #fafafa;
+            @include transition(all $t);
+            color: $body-text;
+            @include input-placeholder {
+              color: #999;
+            }
+            &:focus {
+              border-color: $black-cl;
+              @include transition(all $t);
+            }
+          }
+          .form-submit {
+            @include circle(var(--size-submit));
+            background: #f0f0f0;
+            padding: 0.6rem;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            left: 0.4rem;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
+  }
+  @include xs {
+    &-row {
+      > .row {
+        --gutter-y: 4.8rem;
+      }
+    }
+    &-chat {
+      padding-top: var(--gutter-y);
+      border-top: 1px solid #e6e6e6;
+    }
+    &-newsletter {
+      padding-bottom: var(--gutter-y);
+      border-bottom: 1px solid #e6e6e6;
+    }
+  }
+  @include maxW(345px) {
+    &-row {
+      > .row {
+        --gutter-y: 3rem;
+      }
+    }
+  }
+}

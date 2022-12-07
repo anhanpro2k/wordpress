@@ -1,0 +1,38 @@
+.panel-w-view {
+  @include center(flex);
+  gap: 1.2rem 2.4rem;
+  flex-wrap: wrap;
+  .panel {
+    background: #f0f0f0;
+    border-radius: 1.6rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    &-item {
+      border-radius: 8px;
+      @include transition(all $t);
+      padding: 1rem 2rem;
+      cursor: pointer;
+      &:hover,
+      &.active {
+        background: #1a1a1a;
+        color: $white-cl;
+        @include transition(all $t);
+      }
+    }
+    @include xs {
+      padding: 0.4rem;
+      &-item {
+        padding: 0.8rem;
+      }
+    }
+  }
+  .view-all {
+    .view-btn {
+      padding: 1rem 2rem;
+      color: $primary;
+      font-family: psb;
+    }
+  }
+}

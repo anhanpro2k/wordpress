@@ -1,0 +1,44 @@
+.course-box {
+  --size-logo: 6.4rem;
+  --clr-main: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  mix-blend-mode: normal;
+  box-shadow: $shadow-lg;
+  border-radius: 1rem;
+  padding: 1.6rem;
+  display: flex;
+  gap: 1.6rem 3rem;
+  &__header {
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    column-gap: 1.6rem;
+  }
+
+  &__logo {
+    @include circle(var(--size-logo));
+    @include center(flex);
+    background-color: $white-cl;
+
+    img {
+      width: 50%;
+      display: block;
+    }
+  }
+  &__button .enrolled,
+  &__content .mentor,
+  &__title .title a {
+    color: var(--clr-main);
+  }
+  &__title {
+    a {
+      @include overtext(2);
+    }
+  }
+  &__button {
+    .enrolled {
+      margin-top: 0.8rem;
+      font-size: 1.3rem;
+    }
+  }
+}

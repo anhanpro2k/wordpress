@@ -1,0 +1,331 @@
+$utilities: (
+  // start opacity utilities
+  "opacity":
+    (
+      property: opacity,
+      class: op,
+      values: (
+        "0": 0,
+        "1": 0.1,
+        "2": 0.2,
+        "3": 0.3,
+        "4": 0.4,
+        "5": 0.5,
+        "6": 0.6,
+        "7": 0.7,
+        "8": 0.8,
+        "9": 0.9,
+      ),
+    ),
+  // start display utilities
+  "display":
+    (
+      responsive: true,
+      property: "display",
+      class: "default",
+      values: (
+        "block": block,
+        "flex": flex,
+        "hidden": none,
+      ),
+    ),
+  // end display utilities
+  // start text-align utilities
+  "text-align":
+    (
+      property: "text-align",
+      class: "ta",
+      values: (
+        "right": right,
+        "left": left,
+        "center": center,
+        "justify": justify,
+      ),
+    ),
+  // end text-align utilities
+  // start object-fit utilities
+  "object-fit":
+    (
+      property: "object-fit",
+      class: "obj",
+      values: (
+        "cover": cover,
+        "contain": contain,
+        "fill": fill,
+      ),
+    ),
+  // end object-fit utilities
+  // start text-transform utilities
+  "text-transform":
+    (
+      property: "text-transform",
+      class: "default",
+      values: (
+        "upper": uppercase,
+        "lower": lowercase,
+        "capitalize": capitalize,
+      ),
+    ),
+  // end text-transform utilities
+  // start font-family utilities
+  "font-family":
+    (
+      property: "font-family",
+      class: "f",
+      values: (
+        "reg": pr,
+        "semi": psb,
+        "bold": pb,
+        "kb": kb,
+        "br": br,
+        "dm": dm,
+        "db": db,
+        "dsb": dsb,
+        "mb": mb,
+        "msb": msb,
+        "ab": ab,
+      ),
+    ),
+  // end font-family utilities
+  // start letter-spacing utilities
+  "letter-spacing":
+    (
+      property: "letter-spacing",
+      class: "ls",
+      values: (
+        "normal": 0em,
+        "wide": 0.025em,
+      ),
+    ),
+  // end letter-spacing utilities
+  // start z-index utilities
+  "z-index":
+    (
+      property: "z-index",
+      class: "z",
+      values: (
+        "1": 1,
+        "2": 2,
+        "10": 10,
+        "20": 20,
+        "dropdown": 100,
+        "sticky": 200,
+        "fixed": 300,
+        "modal": 400,
+      ),
+    ),
+  // end z-index utilities
+  // start border-radius utilities
+  "border-radius":
+    (
+      property: "border-radius",
+      class: "rounded",
+      values: (
+        "inherit": inherit,
+        "sm": $base-radius,
+        "md": $base-radius * 2,
+        "lg": $base-radius * 3,
+        "xl": $base-radius * 4,
+        "full": 100rem,
+      ),
+    ),
+  // end border-radius utilities
+  // start border utilities
+  "border":
+    (
+      property: border,
+      class: "border",
+      values: (
+        "0": 0,
+        "none": none,
+        "white": 1px solid #fff,
+      ),
+    ),
+  "border-top": (
+    property: border-top,
+    class: "bt",
+    values: (
+      "0": 0,
+      "none": none,
+      "white": 1px solid #fff,
+    ),
+  ),
+  "border-bottom": (
+    property: border-bottom,
+    class: "bb",
+    values: (
+      "0": 0,
+      "none": none,
+      "white": 1px solid #fff,
+    ),
+  ),
+  "border-left": (
+    property: border-left,
+    class: "bl",
+    values: (
+      "0": 0,
+      "none": none,
+      "white": 1px solid #fff,
+    ),
+  ),
+  "border-right": (
+    property: border-right,
+    class: "br",
+    values: (
+      "0": 0,
+      "none": none,
+      "white": 1px solid #fff,
+    ),
+  ),
+  // end border utilities
+  // start box-shadow utilities
+  "box-shadow":
+    (
+      property: "box-shadow",
+      class: "shadow",
+      values: (
+        "main": rgba(99, 99, 99, 0.2) 0px 2px 8px 0px,
+        "sec": rgba(0, 0, 0, 0.1) 0px 4px 12px,
+      ),
+    ),
+  // end box-shadow utilities
+  // start background utilities
+  "background":
+    (
+      property: "background",
+      class: "bg",
+      values: (
+        "size": cover,
+        "position": center,
+        "repeat": no-repeat,
+        "attachment": fixed,
+      ),
+    ),
+  // end background utilities
+  // start sizing utilities
+  "width":
+    (
+      responsive: true,
+      property: width,
+      class: w,
+      values: (
+        "full": 100%,
+        "50": 50%,
+        "fit": fit-content,
+      ),
+    ),
+  "height": (
+    responsive: true,
+    property: height,
+    class: h,
+    values: (
+      "full": 100%,
+      "50": 50%,
+      "fit": fit-content,
+      "auto": auto,
+    ),
+  ),
+  // end sizing utilities
+  // start flex utilities
+  "flex-direction":
+    (
+      responsive: true,
+      property: flex-direction,
+      class: flex,
+      values: (
+        row: row,
+        column: column,
+        row-reverse: row-reverse,
+        column-reverse: column-reverse,
+      ),
+    ),
+  "flex-wrap": (
+    responsive: false,
+    property: flex-wrap,
+    class: flex,
+    values: (
+      wrap: wrap,
+    ),
+  ),
+  "justify-content": (
+    responsive: true,
+    property: justify-content,
+    class: jc,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      between: space-between,
+      around: space-around,
+      evenly: space-evenly,
+    ),
+  ),
+  "align-items": (
+    responsive: true,
+    property: align-items,
+    class: ai,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+    ),
+  )
+);
+@each $prop, $map in $utilities {
+  $property: map-get($map, "property");
+  $class: map-get($map, "class");
+  $values: map-get($map, "values");
+  $prefix: map-get($map, "prefix");
+
+  @each $key, $value in $values {
+    @if length($property) > 1 {
+      .#{$class}-#{$key} {
+        #{nth($property, 1)}: $value;
+        #{nth($property, 2)}: $value;
+      }
+    } @else if ($class == "default") {
+      .#{$key} {
+        #{$property}: $value;
+      }
+    } @else if ($property == "background") {
+      .#{$class}-#{$value} {
+        #{$property}-#{$key}: $value;
+      }
+    } @else {
+      .#{$class}-#{$key} {
+        #{$property}: $value;
+      }
+    }
+  }
+}
+@each $prop, $map in $utilities {
+  $responsive: map-get($map, "responsive");
+  $property: map-get($map, "property");
+  $class: map-get($map, "class");
+  $values: map-get($map, "values");
+  $prefix: map-get($map, "prefix");
+
+  @each $key, $value in $values {
+    @each $breakpoint in map-keys($grid-breakpoints) {
+      $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+      @include media-breakpoint-down($breakpoint, $grid-breakpoints) {
+        @if ($responsive == true) {
+          @if length($property) > 1 {
+            .#{$class}-#{$key}#{$infix} {
+              #{nth($property, 1)}: $value;
+              #{nth($property, 2)}: $value;
+            }
+          } @else if ($class == "default") {
+            .#{$key}#{$infix} {
+              #{$property}: $value;
+            }
+          } @else {
+            .#{$class}-#{$key}#{$infix} {
+              #{$property}: $value;
+            }
+          }
+        }
+      }
+    }
+  }
+}

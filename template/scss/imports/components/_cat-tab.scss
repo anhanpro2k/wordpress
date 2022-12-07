@@ -1,0 +1,28 @@
+.cat-tab {
+  @include center(flex);
+  column-gap: 0.8rem;
+  margin-top: 4rem;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    height: 0.5rem;
+  }
+  @include xs {
+    justify-content: flex-start;
+    padding-bottom: 0.5rem;
+  }
+  .link {
+    flex-shrink: 0;
+    color: $body-text;
+    padding: 1rem 2rem;
+    @include transition(all $t);
+    border-radius: 8px;
+    font-family: psb;
+
+    &:hover,
+    &.active {
+      background: #1a1a1a;
+      color: $white-cl;
+      @include transition(all $t);
+    }
+  }
+}

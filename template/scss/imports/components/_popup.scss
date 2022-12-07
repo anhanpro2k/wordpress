@@ -1,0 +1,160 @@
+.popup {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 600;
+  @include center(flex);
+  @include transform(translateY(-10px));
+  @include visible(0);
+  @include transition(all $t);
+
+  &.is-show {
+    @include visible(1);
+    @include transform(translateY(0));
+    @include transition(all $t);
+  }
+
+  &-content {
+    background-color: $white-cl;
+    border-radius: $base-radius;
+    position: relative;
+  }
+
+  &-close {
+    --size: 30px;
+    position: absolute;
+    top: calc(-1 / 2 * var(--size));
+    right: calc(-1 / 2 * var(--size));
+    @include circle(var(--size));
+    color: $white-cl;
+    background-color: #f44336;
+    @include center(flex);
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  &-main {
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  &-register {
+    .popup-content {
+      max-width: 45rem;
+      margin-inline: auto;
+      padding: 2.4rem;
+    }
+    .popup-form {
+      &-textbox {
+        margin-bottom: 2.4rem;
+      }
+      .form-field {
+        + .form-field {
+          margin-top: 2.4rem;
+        }
+      }
+      .form-ctr {
+        height: var(--height-input);
+        border-radius: $base-radius;
+        outline: none;
+        @include border($border-light);
+        width: 100%;
+        padding-inline: 1.2rem;
+        @include transition(all $t);
+        &:focus {
+          border-color: $primary;
+          @include transition(all $t);
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+      }
+      .submit-form {
+        margin-top: 2.4rem;
+      }
+      .form-submit {
+        border: none;
+        outline: none;
+      }
+    }
+  }
+  &-booking {
+    .popup-main {
+      overflow-x: hidden;
+    }
+    .popup-content {
+      padding: 3.2rem 2.4rem 2.4rem;
+    }
+    .popup-title {
+      text-align: center;
+    }
+    .booking-form {
+      .form-label {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+        display: block;
+      }
+      .form-gr {
+        + .form-gr {
+          margin-top: 1.6rem;
+        }
+      }
+      .form-ctr {
+        width: 100%;
+        height: 4rem;
+        background: #f5f5f5;
+        border-radius: 4px;
+        outline: none;
+        padding-inline: 1.2rem;
+        @include border(#f5f5f5);
+        @include transition(all $t);
+        font-size: 1.3rem;
+
+        &::focus {
+          border-color: $primary;
+          @include transition(all $t);
+        }
+        @include input-placeholder {
+          color: $subtitle;
+        }
+      }
+      textarea.form-ctr {
+        height: 13.8rem;
+        padding: 1.2rem;
+        resize: none;
+      }
+      .form-submit {
+        margin-top: 2.4rem;
+        .submit-form {
+          height: 4.8rem;
+          background: radial-gradient(
+            63.94% 224.07% at 49.7% 50%,
+            #de3551 0%,
+            #b10a0a 100%
+          );
+          padding-inline: 3.2rem;
+          border-radius: 64px;
+          color: $white-cl;
+          font-family: psb;
+          display: inline-block;
+          outline: none;
+          border: 1px solid transparent;
+          @include transition(all $t);
+          &:hover {
+            background: $white-cl;
+            color: $primary;
+            @include transition(all $t);
+            box-shadow: $shadow-sm;
+            border-color: $red-active;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .img-wrap {
+      height: 100%;
+      border-radius: 4px;
+      img {
+        border-radius: inherit;
+        @include img-cover;
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+@-ms-viewport {
+  width: device-width;
+}
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  @include customscroll();
+}
+html {
+  font-size: 62.5%; // => 10px = 1rem
+  scroll-behavior: smooth;
+}
+strong {
+  font-family: kb;
+}
+body {
+  width: 100%;
+  max-width: $container-max-width;
+  margin: auto;
+  @include text(
+    pr,
+    var(--body16-fs),
+    var(--body16-lh),
+    $body-text
+  ); // tuỳ chỉnh
+  background: $bg-main;
+  position: relative;
+  overflow-x: hidden;
+  touch-action: pan-y;
+  &.menu-is-show,
+  &.popup-is-show {
+    overflow: hidden;
+  }
+  .pt-sc,
+  .py-sc {
+    padding-top: var(--pd-section);
+  }
+  .pb-sc,
+  .py-sc {
+    padding-bottom: var(--pd-section);
+  }
+  .pt-sc-sm,
+  .py-sc-sm {
+    padding-top: var(--pd-section-sm);
+  }
+  .pb-sc-sm,
+  .py-sc-sm {
+    padding-bottom: var(--pd-section-sm);
+  }
+  .container,
+  .container-fluid {
+    @include make-container();
+  }
+
+  @media (min-width: $xs-min) {
+    .container {
+      max-width: 540px;
+    }
+  }
+  @media (min-width: $sm-min) {
+    .container {
+      max-width: 720px;
+    }
+  }
+  @media (min-width: $md-min) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  @media (min-width: $lg-min) {
+    .container {
+      max-width: $container-width;
+    }
+  }
+
+  main {
+    width: 100%;
+    margin: auto;
+    @include visible;
+
+    section {
+      position: relative;
+    }
+  }
+  @include xl {
+    // CSS responsive large desktop
+  }
+  @include lg {
+    // CSS responsive  desktop
+  }
+  @include md {
+    // CSS responsive tablet
+  }
+  @include sm {
+    // CSS responsive mobile
+    background: $white-cl;
+  }
+  @include xs {
+    // CSS responsive small mobile
+  }
+  @include xxs {
+    // CSS responsive smallest mobile
+  }
+}

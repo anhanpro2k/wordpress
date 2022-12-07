@@ -1,0 +1,58 @@
+.mentor {
+  --spacing: 4.8rem;
+  &-heading {
+    .desc {
+      max-width: 64rem;
+      margin-inline: auto;
+      margin-top: 0.8rem;
+    }
+  }
+  &-tab {
+    &__panel {
+      margin-top: var(--spacing);
+    }
+    &__content {
+      margin-top: var(--spacing);
+      max-width: 81.6rem;
+      margin-inline: auto;
+      .content-box {
+        display: none;
+        &.active {
+          display: block;
+          @include animation(fadeUp 1s $cubic);
+        }
+        .slider-wrap {
+          background: #2e2123;
+          border: 0.5px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.25);
+          border-radius: $md-radius;
+          padding: 2.4rem;
+        }
+        .slider-ctr {
+          margin-top: var(--spacing);
+        }
+      }
+      .swiper {
+        --item: 3;
+        --gap: 2.4rem;
+        &-slide {
+          width: calc(100% / var(--item) - var(--gap));
+          margin-right: var(--gap);
+        }
+        @include md {
+          --item: 2;
+        }
+      }
+    }
+  }
+  @include xs {
+    &-heading {
+      .heading-sc {
+        .title-sc {
+          font-size: var(--h3-fs);
+          line-height: var(--h3-lh);
+        }
+      }
+    }
+  }
+}

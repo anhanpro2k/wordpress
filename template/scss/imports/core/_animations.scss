@@ -1,0 +1,105 @@
+@include keyframes(moveTop) {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@include keyframes(bounceY) {
+  0% {
+    @include transform(scaleY(0.1));
+  }
+  40% {
+    @include transform(scaleY(1.04));
+  }
+  60% {
+    @include transform(scaleY(0.98));
+  }
+  80% {
+    @include transform(scaleY(1.04));
+  }
+  100% {
+    @include transform(scaleY(0.98));
+  }
+  80% {
+    @include transform(scaleY(1.02));
+  }
+  100% {
+    @include transform(scaleY(1));
+  }
+}
+
+@include keyframes(reveal-img-before) {
+  0% {
+    top: 0;
+    right: 100%;
+    bottom: 100%;
+    margin-bottom: -10px;
+  }
+  40% {
+    top: 0;
+    right: 0;
+    bottom: 100%;
+    margin-bottom: -10px;
+  }
+  60% {
+    top: 0;
+  }
+  80% {
+    right: 0;
+    bottom: -1px;
+    margin-bottom: 0;
+  }
+  100% {
+    top: 100%;
+    right: 0;
+    bottom: -1px;
+    margin-bottom: 0;
+  }
+}
+@include keyframes(slide) {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+@include keyframes(fadeUp) {
+  0% {
+    opacity: 0;
+    @include transform(translateY(3rem));
+  }
+  100% {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: calc(100% + 1rem);
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #b41317;
+  }
+}

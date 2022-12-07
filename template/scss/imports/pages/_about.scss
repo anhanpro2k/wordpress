@@ -1,0 +1,19 @@
+body.about-page {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    &-main {
+      padding: 0.8rem;
+      background: $white-cl;
+      border-radius: $base-radius;
+    }
+    @include md {
+      &-main {
+        width: fit-content;
+      }
+    }
+  }
+}

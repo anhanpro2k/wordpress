@@ -1,0 +1,45 @@
+// ---------- flex ----------
+.flex {
+  &-center {
+    @include center(flex);
+
+    &-between {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}
+// css center
+.center {
+  &-x {
+    @include center(x);
+  }
+  &-y {
+    @include center(y);
+  }
+  &-abs {
+    @include center(xy);
+  }
+  &-block {
+    @include center(block);
+  }
+  &-inline {
+    @include center(inline);
+  }
+}
+// ---------- pointer ----------
+.pointer {
+  cursor: pointer;
+  &-none {
+    pointer-events: none;
+  }
+}
+// ---------- resize ----------
+.resize-none {
+  resize: none;
+}
+
+.abs-full {
+  @include fullscreen();
+}

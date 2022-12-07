@@ -1,0 +1,120 @@
+.going {
+  --spacing: 6rem;
+  padding-block: var(--ptop);
+  &-heading {
+    .desc {
+      max-width: 64rem;
+      margin-top: var(--spacing);
+      margin-inline: auto;
+      color: $black-cl;
+    }
+  }
+  &-tab {
+    &__panel,
+    &__content {
+      margin-top: var(--spacing);
+    }
+
+    &__content {
+      .content {
+        display: none;
+        &.active {
+          display: block;
+          @include animation(fadeUp 1s $cubic);
+        }
+      }
+      .swiper {
+        padding: 2rem;
+        margin: -2rem;
+        &-slide {
+          opacity: 0;
+          width: 54.6rem !important;
+          @include transition(all $t2);
+          border: 1px solid #cccccc;
+          filter: drop-shadow(0px 12px 12px rgba(0, 0, 0, 0.12));
+          border-radius: $base-radius;
+          @include sm {
+            width: 100% !important;
+            .content-item__info {
+              display: none;
+            }
+          }
+          &-visible {
+            opacity: 0.3;
+          }
+
+          .content-item-inner {
+            position: relative;
+            overflow: hidden;
+            .content-item__info {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+            }
+          }
+          .course-box {
+            flex-wrap: wrap;
+            &__logo {
+              max-width: 0;
+            }
+            &__logo,
+            &__button .enrolled,
+            &__content .mentor {
+              @include visible(0);
+              @include transition(all 1s);
+            }
+            &__button .enrolled {
+              margin-top: 0;
+            }
+          }
+          .content-item__info {
+            @include transform(translateY(2rem));
+            @include transition(all 1s $cubic);
+          }
+          .content-item__img img {
+            display: block;
+          }
+          &-active {
+            opacity: 1;
+            .course-box {
+              &__logo {
+                max-width: 10rem;
+              }
+              &__logo,
+              &__button .enrolled,
+              &__content .mentor {
+                @include visible(1);
+              }
+              &__button .enrolled {
+                margin-top: 0.8rem;
+              }
+            }
+            .content-item__info {
+              @include transform(translateY(0rem));
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include md {
+    padding-block: 8rem 6rem;
+  }
+  @include sm {
+    --spacing: 2.4rem;
+    padding-block: 8rem 4rem;
+  }
+  @include xs {
+    padding-block: 8rem 2rem;
+    &-heading {
+      .heading-sc {
+        .title-sc {
+          font-size: var(--h3-fs);
+          line-height: var(--h3-lh);
+        }
+      }
+    }
+  }
+}

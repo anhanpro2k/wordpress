@@ -1,0 +1,105 @@
+.aside-wrap {
+  --gap-y-item: 2.4rem;
+  position: sticky;
+  top: calc(var(--height-header) + 0.5rem);
+  left: 0;
+  .aside-item {
+    + .aside-item {
+      margin-top: var(--gap-y-item);
+    }
+  }
+  .aside-title {
+    font-family: pb;
+    margin-bottom: 1.2rem;
+  }
+  .aside-search {
+    .form-wrapper {
+      form {
+        --size-submit: 3.6rem;
+        position: relative;
+        .form-submit {
+          @include circle(var(--size-submit));
+          border: none;
+          outline: none;
+          background: #fafafa;
+          @include center(y);
+          left: 0.4rem;
+          padding: 0.6rem;
+          @include center(flex);
+          cursor: pointer;
+          @include transition(all $t);
+          &:hover {
+            background: $red-active;
+            @include transition(all $t);
+          }
+          .icon-search > * {
+            display: block;
+          }
+        }
+        .form-ctr {
+          background-color: $placeholder;
+          border: 1px solid $border-light;
+          border-radius: 3rem;
+          height: var(--height-input);
+          width: 100%;
+          padding-inline: calc(var(--size-submit) + 0.8rem) 1.6rem;
+          @include input-placeholder {
+            color: $subtitle;
+          }
+        }
+      }
+    }
+  }
+  .aside-topic {
+    .topic-list {
+      .topic {
+        background: #f2f2f2;
+        border-radius: $md-radius;
+        color: #292929;
+        height: var(--height-button);
+        padding-inline: 1.6rem;
+        display: inline-flex;
+        align-items: center;
+        margin-right: 0.8rem;
+        margin-bottom: 0.8rem;
+        @include transition(all $t);
+
+        &:hover {
+          background: $red-active;
+          @include transition(all $t);
+        }
+      }
+    }
+  }
+  .aside-calendar {
+    .calendar {
+      &-content {
+        background: $placeholder;
+        border-radius: $base-radius;
+        padding: 1.6rem;
+      }
+      &-icon img {
+        display: block;
+      }
+      &-times,
+      &-title {
+        margin-top: 1.6rem;
+      }
+      &-times {
+        .time {
+          letter-spacing: 0.04em;
+        }
+      }
+      .btn-success,
+      .btn-regis {
+        margin-top: 1.2rem;
+        width: 100%;
+      }
+      &-title {
+        @include xs {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
